@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sunikrondec.github.io/index-cn-i-game-com-cn/sitemap.xml
