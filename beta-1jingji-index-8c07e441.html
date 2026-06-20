@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>一竞技 · 信息卡片介绍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fde9db 0%, #f7d9c4 40%, #f2cbb3 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2.5rem 1.5rem;
+      line-height: 1.6;
+      color: #3d2c22;
+    }
+
+    .cards-grid {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* 主视觉大卡 */
+    .hero-card {
+      background: #fffcf8;
+      border-radius: 3rem 3rem 2rem 2rem;
+      padding: 3rem 2.5rem 2.8rem;
+      box-shadow: 0 20px 40px -12px rgba(130, 70, 40, 0.25);
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-card h1 {
+      font-size: 3.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      background: linear-gradient(to right, #b76a3c, #8f4e2c);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-sub {
+      font-size: 1.2rem;
+      color: #6f4e3a;
+      background: #f1ddcf;
+      display: inline-block;
+      padding: 0.3rem 1.8rem;
+      border-radius: 60px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero-desc {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #4c362a;
+    }
+
+    .hero-desc a {
+      color: #8f4e2c;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 2px solid #dba882;
+      transition: 0.2s;
+    }
+
+    .hero-desc a:hover {
+      background: #dba88230;
+      border-bottom-color: #8f4e2c;
+    }
+
+    /* 两列信息卡片 */
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.8rem;
+    }
+
+    .card {
+      background: #fffcf8;
+      border-radius: 2.2rem;
+      padding: 2rem 2rem 2.2rem;
+      box-shadow: 0 12px 28px -10px rgba(100, 55, 30, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 34px -14px rgba(100, 55, 30, 0.28);
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      color: #7b4a2e;
+      border-left: 5px solid #dba882;
+      padding-left: 1rem;
+      margin-bottom: 1.3rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card li {
+      padding: 0.45rem 0 0.45rem 1.8rem;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="%23b76a3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+      background-size: 14px;
+      color: #3d2c22;
+      margin-bottom: 0.3rem;
+    }
+
+    .card p {
+      color: #3d2c22;
+      margin-bottom: 0.8rem;
+    }
+
+    .tag-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .tag {
+      background: #f1ddcf;
+      color: #5c3b28;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 470;
+    }
+
+    /* 自然链接段落 + 延伸阅读 */
+    .link-card {
+      background: #fffcf8;
+      border-radius: 2.2rem;
+      padding: 2.2rem 2.5rem;
+      box-shadow: 0 12px 28px -10px rgba(100, 55, 30, 0.18);
+    }
+
+    .link-card p {
+      font-size: 1.08rem;
+      margin-bottom: 1.3rem;
+      color: #3d2c22;
+    }
+
+    .link-card a {
+      color: #8f4e2c;
+      font-weight: 550;
+      text-decoration: none;
+      border-bottom: 2px solid #ddb694;
+      transition: 0.2s;
+    }
+
+    .link-card a:hover {
+      background: #dba88230;
+      border-bottom-color: #7b4427;
+    }
+
+    .faq-summary {
+      margin-top: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .faq-item {
+      background: #f7ede6;
+      padding: 0.8rem 1.5rem;
+      border-radius: 60px;
+      font-size: 0.98rem;
+      color: #4a3428;
+      border-left: 6px solid #dba882;
+    }
+
+    .faq-item strong {
+      color: #7b4a2e;
+      margin-right: 0.4rem;
+    }
+
+    .response-hint {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #7b604e;
+      letter-spacing: 0.3px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      body {
+        padding: 1.8rem 1rem;
+      }
+      .hero-card {
+        padding: 2rem 1.5rem 2.2rem;
+      }
+      .hero-card h1 {
+        font-size: 2.6rem;
+      }
+      .two-column {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .card {
+        padding: 1.6rem 1.5rem;
+      }
+      .link-card {
+        padding: 1.6rem 1.5rem;
+      }
+      .hero-sub {
+        font-size: 1rem;
+        padding: 0.2rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cards-grid">
+    <!-- 主视觉 -->
+    <div class="hero-card">
+      <h1>一竞技</h1>
+      <div class="hero-sub">日常查询 · 对照 · 延伸阅读</div>
+      <p class="hero-desc">
+        无论是赛前数据、实时战况还是赛后复盘，<a href="https://beta-1jingji.com">一竞技</a> 都努力让信息变得更直观。
+        不用频繁切换页面，也不用在零散消息里翻找，这里把常用数据、趋势对照和背景延伸整合在一起，
+        陪你更从容地关注每一场较量。
+      </p>
+    </div>
+
+    <!-- 两列卡片：用途卡片 + 适合人群 -->
+    <div class="two-column">
+      <!-- 用途卡片 -->
+      <div class="card">
+        <h2>日常用途</h2>
+        <ul>
+          <li>快速查询队伍近期交锋记录与核心数据</li>
+          <li>对照不同赛区、版本或选手的统计差异</li>
+          <li>浏览赛后分析、走势图与关键事件时间线</li>
+          <li>收藏感兴趣的对局，方便日后延伸阅读</li>
+          <li>从赛事日历直接跳转相关直播或回放</li>
+        </ul>
+        <div class="tag-group">
+          <span class="tag">数据对照</span>
+          <span class="tag">历史记录</span>
+          <span class="tag">趋势简报</span>
+        </div>
+      </div>
+
+      <!-- 适合人群 -->
+      <div class="card">
+        <h2>适合这样的你</h2>
+        <ul>
+          <li>习惯先看数据再聊比赛的爱好者</li>
+          <li>喜欢纵向对比不同赛季变化的朋友</li>
+          <li>赛前想快速了解对方底细的玩家</li>
+          <li>赛后想找个地方安静回顾细节的观众</li>
+          <li>对战术、阵容、版本更迭有好奇心的读者</li>
+        </ul>
+        <div class="tag-group">
+          <span class="tag">数据型观众</span>
+          <span class="tag">复盘爱好者</span>
+          <span class="tag">趋势控</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 自然链接段落 + FAQ摘要 -->
+    <div class="link-card">
+      <p>
+        很多朋友会在赛前打开 <a href="https://beta-1jingji.com">一竞技</a>，快速过一遍两边近十场的交手记录、近期状态和地图胜率。
+        不用自己翻历史贴，也不用记一堆截图，页面直接列出对照信息，省下不少时间。
+        赛后如果想再读一读关键回合的拆解，或者看看选手数据有没有变化，也可以回来继续翻。
+      </p>
+      <p>
+        除了基础数据，站内也整理了一些专题内容，比如特定版本的英雄/角色出场变化、不同赛区的打法风格对比。
+        对于喜欢从数字里找故事的读者来说，这些内容提供了另一种看比赛的视角。
+      </p>
+
+      <!-- FAQ摘要 -->
+      <div class="faq-summary">
+        <div class="faq-item"><strong>❓ 数据多久更新？</strong> 比赛结束后通常会在一个可接受的时段内刷新，关键场次优先处理。</div>
+        <div class="faq-item"><strong>❓ 可以只看特定队伍或选手吗？</strong> 支持按队伍/选手筛选，也能直接搜索你想关注的对象。</div>
+        <div class="faq-item"><strong>❓ 有移动端适配吗？</strong> 页面针对手机和平板做了响应式调整，随时随地都能查阅。</div>
+      </div>
+    </div>
+
+    <div class="response-hint">
+      从日常查询到延伸阅读——信息卡片式介绍 · 暖色渐变背景 · 圆角卡片质感
+    </div>
+  </div>
+</body>
+</html>
