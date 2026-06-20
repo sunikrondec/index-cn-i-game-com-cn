@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一竞技 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f4f7;
+            color: #1e293b;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .page-wrap {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* 卡片体系 */
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            padding: 2rem 2.2rem;
+            margin-bottom: 1.8rem;
+            transition: box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .card-soft {
+            background: #fafbfc;
+            border: 1px solid #e9edf2;
+            box-shadow: none;
+        }
+
+        /* 标题体系 */
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0b1a2f;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #4a5a72;
+            max-width: 680px;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6f7d95;
+            margin-bottom: 0.4rem;
+            font-weight: 500;
+        }
+
+        .section-heading {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #0f1e33;
+            margin-bottom: 1.2rem;
+            border-bottom: 2px solid #dce2ea;
+            padding-bottom: 0.6rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .feature-item {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.4rem 1.6rem;
+            border: 1px solid #e6eaef;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .feature-item h4 {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+            font-weight: 600;
+            color: #0f1e33;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #3b4a62;
+        }
+
+        .scenario-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.2rem 0 0.4rem;
+        }
+
+        .scenario-tag {
+            background: #eef1f6;
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.9rem;
+            color: #1f2b3f;
+            border: 1px solid #dbe0e7;
+        }
+
+        .tip-block {
+            background: #f6f8fc;
+            border-left: 4px solid #315c8b;
+            padding: 1.2rem 1.6rem;
+            border-radius: 12px;
+            margin: 1.4rem 0;
+        }
+
+        .faq-item {
+            margin: 0.8rem 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            color: #0f1e33;
+        }
+
+        .faq-answer {
+            margin: 0.2rem 0 0.6rem 0;
+            color: #33445a;
+        }
+
+        a {
+            color: #1a4c7a;
+            text-decoration: none;
+            border-bottom: 1px solid #b4c7db;
+            transition: border-color 0.15s;
+        }
+
+        a:hover {
+            border-bottom-color: #1a4c7a;
+        }
+
+        .cta-sentence {
+            font-size: 1rem;
+            margin-top: 0.8rem;
+        }
+
+        .footer-note {
+            padding-top: 1rem;
+            border-top: 1px solid #dce2ea;
+            margin-top: 1.8rem;
+            font-size: 0.9rem;
+            color: #5d6f89;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .footer-note a {
+            border-bottom: 1px solid #b4c7db;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .scenario-block {
+                gap: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- hero 简明摘要 -->
+    <div class="card" style="margin-top: 0.2rem;">
+        <div class="section-label">产品摘要</div>
+        <h1 class="hero-title">一竞技 · 信息聚合入口</h1>
+        <p class="hero-sub">
+            <a href="https://zhc-1jingji.com">一竞技</a> 是一个面向特定领域的信息集成与索引站点，帮助用户快速定位所需内容，减少信息检索中的重复筛选成本。平台本身不生成原始数据，而是通过结构化展示提升获取效率。
+        </p>
+    </div>
+
+    <!-- 亮点卡片 用 feature-grid 呈现 -->
+    <div class="card">
+        <div class="section-heading">核心特点</div>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h4>主题集中</h4>
+                <p>围绕单一垂直方向进行信息组织，避免泛化搜索带来的噪声干扰，让访问者更快理解站点定位。</p>
+            </div>
+            <div class="feature-item">
+                <h4>结构清晰</h4>
+                <p>采用层级式索引与分类呈现，内容区块划分明确，适合有明确查询目标的用户直接定位。</p>
+            </div>
+            <div class="feature-item">
+                <h4>低冗余设计</h4>
+                <p>不堆砌无关内容，页面元素服务于信息传达，减少视觉干扰与认知负荷。</p>
+            </div>
+            <div class="feature-item">
+                <h4>持续更新</h4>
+                <p>索引内容跟随领域动态做定期维护，避免链接失效或信息过时，保持基础参考价值。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用建议 + 场景 -->
+    <div class="card card-soft">
+        <div class="section-heading">适用场景与使用建议</div>
+        <p style="margin-bottom: 0.8rem;">
+            当你需要快速了解某一特定方向的资源布局、常用链接或基础概念时，<a href="https://zhc-1jingji.com">一竞技</a> 可以作为起点。它适合以下类型的访问者：
+        </p>
+        <div class="scenario-block">
+            <span class="scenario-tag">领域入门者</span>
+            <span class="scenario-tag">信息复核者</span>
+            <span class="scenario-tag">资源收集者</span>
+            <span class="scenario-tag">日常速览</span>
+        </div>
+        <div class="tip-block">
+            <strong>建议：</strong> 先浏览站点的分类索引，再根据自身兴趣点进入具体条目。如果遇到不熟悉的术语，可结合外部资料交叉验证。
+        </div>
+        <p style="font-size: 0.95rem; color: #3b4a62;">
+            不需要注册或登录，也无需安装任何工具，直接通过浏览器访问即可使用全部公开内容。
+        </p>
+    </div>
+
+    <!-- FAQ 摘要 + 可信说明 -->
+    <div class="card">
+        <div class="section-heading">常见问题摘要</div>
+
+        <div class="faq-item">
+            <div class="faq-question">这个站点提供什么类型的内容？</div>
+            <div class="faq-answer">主要提供经过筛选的索引、参考链接、以及领域相关的摘要信息。所有内容均为公开可查的资源整合，不包含私有数据或推广性内容。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">内容更新频率是怎样的？</div>
+            <div class="faq-answer">保持不定期更新，重点维护失效链接与新增信息点。没有固定周期，但会关注领域变化及时修正。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">是否需要付费或注册？</div>
+            <div class="faq-answer">完全免费公开，不设付费内容，也不要求注册账户。访问即用，不收集个人身份信息。</div>
+        </div>
+        <div style="margin-top: 1.2rem; font-size: 0.95rem; background: #f2f5f9; padding: 0.8rem 1.2rem; border-radius: 12px;">
+            <span style="font-weight: 600;">可信说明：</span> 本平台仅提供信息索引与展示，不对第三方链接的内容完整性负责。建议用户根据自身判断使用资源，重要信息请以原始出处为准。
+        </div>
+    </div>
+
+    <!-- 结尾段落 + 自然链接 -->
+    <div class="card" style="background: #fafcff;">
+        <p style="font-size: 1.05rem;">
+            如果你是第一次接触这个方向，不妨从 <a href="https://zhc-1jingji.com">一竞技</a> 的首页分类开始浏览。大部分条目都附有简短说明，可以帮你快速判断是否值得深入查看。
+        </p>
+        <p style="margin-top: 0.8rem; color: #3b4a62;">
+            无论你是出于学习、工作还是日常参考，都建议保持对信息来源的独立验证习惯。本页面所描述的特征基于站点当前公开状态，后续如有调整以实际页面为准。
+        </p>
+
+        <div class="footer-note">
+            <span>© 页面为产品说明示例 · 信息来自公开站点</span>
+            <span><a href="https://zhc-1jingji.com">一竞技</a> · 索引入口</span>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
