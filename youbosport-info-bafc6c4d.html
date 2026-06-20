@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+    <title>再次翻开 · 友博体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #f0f2f5;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #2c3e50;
+            padding: 2rem 1.2rem;
+        }
+        .page {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+        /* header 区域，简洁留白 */
+        .site-header {
+            margin-bottom: 2.5rem;
+        }
+        .site-header h1 {
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            color: #1e293b;
+            border-left: 4px solid #3b82f6;
+            padding-left: 1rem;
+        }
+        .site-header .sub {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            color: #64748b;
+            padding-left: 1.2rem;
+        }
+
+        /* 卡片通用设计 */
+        .card {
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e9edf2;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+        .card:hover {
+            border-color: #d0d8e3;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+        }
+
+        /* 正文卡片标题 */
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0.9rem;
+            color: #1e293b;
+            border-bottom: 1px solid #eef2f6;
+            padding-bottom: 0.5rem;
+        }
+        .card h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin: 1.4rem 0 0.5rem;
+            color: #334155;
+        }
+        .card p {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 引用提示块 */
+        .insight-block {
+            background: #f8fafc;
+            border-left: 4px solid #94a3b8;
+            padding: 1rem 1.4rem;
+            margin: 1.4rem 0;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+        .insight-block strong {
+            color: #1e293b;
+        }
+
+        /* 列表修饰 */
+        .feature-list {
+            list-style: none;
+            margin: 0.8rem 0 1.2rem;
+        }
+        .feature-list li {
+            padding: 0.3rem 0 0.3rem 1.6rem;
+            position: relative;
+        }
+        .feature-list li::before {
+            content: "·";
+            position: absolute;
+            left: 0.3rem;
+            color: #3b82f6;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* 访问句卡片 — 薄底色 温柔强调 */
+        .visit-card {
+            background: #f4f7fb;
+            border: 1px solid #dce3ed;
+            border-radius: 14px;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.02);
+        }
+        .visit-card p {
+            font-size: 1.05rem;
+            color: #1e293b;
+            margin-bottom: 0;
+        }
+        .visit-card a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px dashed #94b8e8;
+            transition: border-bottom 0.2s;
+        }
+        .visit-card a:hover {
+            border-bottom: 1px solid #2563eb;
+        }
+
+        /* 页脚 */
+        .footer-note {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            text-align: center;
+            margin-top: 2.8rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.5rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1.2rem 0.8rem;
+            }
+            .card {
+                padding: 1.3rem 1.1rem;
+            }
+            .visit-card {
+                padding: 1.3rem 1rem;
+            }
+            .site-header h1 {
+                font-size: 1.6rem;
+                padding-left: 0.7rem;
+            }
+            .site-header .sub {
+                padding-left: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- 标题区 -->
+    <header class="site-header">
+        <h1>再次翻开 · 友博体育</h1>
+        <div class="sub">一篇关于回访、收藏与持续阅读的笔记</div>
+    </header>
+
+    <!-- 第一段正文卡片：从再次访问开始 -->
+    <section class="card">
+        <h2>回到熟悉的地方</h2>
+        <p>
+            互联网上值得反复去的地方不多。有些页面打开一次，就再也不会想起；而另一些，你会不知不觉把它放进书签栏，甚至每次打开浏览器都先瞥一眼有没有更新。<a href="https://youbosport.com" style="color:#2563eb; text-decoration: none; border-bottom: 1px dashed #94b8e8;">友博体育</a>对我来说就属于后者——它不是那种靠弹窗提醒你“该回来了”的网站，而是当你某天忽然想找点比赛回放、战术分析或者运动故事时，第一个浮现在脑海里的名字。
+        </p>
+        <p>
+            这种“再次访问”的感觉很微妙。没有催促，没有红点，只是页面安安静静地等在那里，内容还在，版式依旧，甚至连文章发布的节奏都保持着一种稳定的呼吸感。你打开它，就像推开一扇熟悉的门，里面的气味、光线、摆设都没有变，但桌上可能又多了一本新书。
+        </p>
+    </section>
+
+    <!-- 第二段：收藏与节奏 -->
+    <section class="card">
+        <h2>收藏夹里的固定位置</h2>
+        <p>
+            很多人习惯把喜欢的网站分门别类：工具、资讯、社区……而“常读”那一栏往往只有寥寥几个。我把<a href="https://youbosport.com" style="color:#2563eb; text-decoration: none; border-bottom: 1px dashed #94b8e8;">友博体育</a>放在“运动·笔记”的文件夹里，旁边是一些纪录片和电子杂志。它不追求日更十条的密度，但每篇文章都有明确的指向——某个球员的成长轨迹、一项运动规则的演变、或者一场经典比赛的幕后。
+        </p>
+        <p>
+            这种内容节奏恰好适合收藏。你不会因为信息过载而焦虑，也不会因为太久没更新而遗忘。它像是你订阅的一份纸质小报，不定期抵达，但每一期都值得从头到尾读完。收藏它的意义，不只是存一个链接，而是为未来某个想看“正经体育内容”的时刻储备一个可靠去处。
+        </p>
+        <div class="insight-block">
+            <strong>一点提示：</strong> 好的收藏习惯是“存而不藏”。把链接放在显眼处，但不必每天点开——等某个安静的下午，再泡一杯茶慢慢浏览。
+        </div>
+    </section>
+
+    <!-- 第三段：持续关注的日常 -->
+    <section class="card">
+        <h2>持续关注的轻姿态</h2>
+        <p>
+            持续关注一个网站，不一定需要 RSS 订阅或者推送通知。有时候，仅仅是每隔一两周主动打开一次，看看有没有新文章，就足够维持一种联结。我对<a href="https://youbosport.com" style="color:#2563eb; text-decoration: none; border-bottom: 1px dashed #94b8e8;">友博体育</a>的关注方式就是这样：不设提醒，不设目标，想起来就去逛逛。
+        </p>
+        <p>
+            这种“轻关注”的好处是不会产生负担。你不用担心错过什么，因为真正值得读的内容会自己留下来；你也不用强迫自己每条都看，因为它的文章结构清晰，标题和导语就能帮你判断是否感兴趣。久而久之，它变成了生活里一个稳定的参照——运动世界的琐碎与宏大，都在那里被梳理成可读的文字。
+        </p>
+        <h3>一些常被提起的内容方向</h3>
+        <ul class="feature-list">
+            <li>比赛复盘中的战术细节与数据解读</li>
+            <li>运动员访谈之外的侧面故事</li>
+            <li>运动文化、装备演变和场地变迁</li>
+            <li>偶尔出现的读者来信与话题讨论</li>
+        </ul>
+        <p>
+            这些方向并不追求热度，但每一篇都像是认真打磨过的。不是那种“读完就忘”的速食文章，而是可以留在阅读笔记里的东西。
+        </p>
+    </section>
+
+    <!-- 引用提示 / 访问句卡片 (自然嵌入链接) -->
+    <div class="visit-card">
+        <p>
+            如果你也喜欢在安静的间隙里读一读关于运动的故事，不妨把<a href="https://youbosport.com">友博体育</a>放进收藏夹。<br>
+            不用刻意记住，需要的时候，它总在那里。
+        </p>
+    </div>
+
+    <!-- 最后一段：FAQ 摘要风格卡片（简洁问答） -->
+    <section class="card">
+        <h2>几个常被问到的</h2>
+        <p><strong>内容更新有固定时间吗？</strong><br>
+        没有严格的时间表，但大致保持每周一到两篇的节奏。有时候周末会多一篇，视题材而定。</p>
+        <p><strong>能不能只看某一类运动？</strong><br>
+        目前覆盖的领域比较广，你可以通过站内搜索或分类标签筛选。足球、篮球、网球、田径等内容都有涉及，偶尔也会出现一些小众运动。</p>
+        <p><strong>文章可以分享或转载吗？</strong><br>
+        大部分文章欢迎以链接形式分享。如果希望转载全文，建议先联系确认授权，这是对作者的基本尊重。</p>
+        <p><strong>为什么选择持续关注？</strong><br>
+        因为没有噪音。在信息膨胀的时代，一个只推送自己认可内容、不盲目蹭热点的站点，本身就值得被保留在阅读列表里。</p>
+    </section>
+
+    <!-- 页脚 -->
+    <div class="footer-note">
+        写于一次安静的页面整理之后 · 2025
+    </div>
+
+</div>
+</body>
+</html>
